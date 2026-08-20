@@ -198,6 +198,23 @@ tr:last-child td { border-bottom: none; }
 .tier:hover { transform: translate(-3px, -5px); box-shadow: 12px 14px 0 var(--ink); }
 .tier.dark:hover { box-shadow: 12px 14px 0 var(--red); }
 
+/* keep the lights on — the night band; each tier is a lit window */
+.lights { background: var(--ink); margin-top: 80px; padding: 76px 0 60px; }
+.lights .sec-head h2 { color: var(--cream); }
+.lights .sec-head .sub { color: var(--dark-muted); }
+.lights .tier { border-color: #0E0C0A; box-shadow: 0 0 46px rgba(255,196,110,0.16), 8px 8px 0 #0E0C0A; }
+.lights .tier:hover { box-shadow: 0 0 70px rgba(255,196,110,0.26), 12px 14px 0 #0E0C0A; }
+.lights .tier.hot { border-color: var(--red); box-shadow: 0 0 46px rgba(216,66,44,0.28), 8px 8px 0 var(--red); }
+.lights .tier.hot:hover { box-shadow: 0 0 70px rgba(216,66,44,0.4), 12px 14px 0 var(--red); }
+.lights .tier p { min-height: 42px; }
+.lights .footnote { color: var(--dark-muted); }
+.lights .footnote a { color: var(--cream); text-decoration: underline; }
+.fineprint { margin-top: 34px; border: 2px dashed var(--dark-muted); padding: 18px 26px; }
+.fineprint summary { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: var(--red); cursor: pointer; font-weight: 600; }
+.fineprint ul { margin: 14px 0 0; padding-left: 18px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; line-height: 1.9; color: #4A4436; }
+.lights .fineprint { border-color: #4A4436; }
+.lights .fineprint ul { color: var(--dark-muted); }
+
 .verify-strip { margin-top: 80px; background: var(--red); color: var(--cream); padding: 16px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-align: center; }
 
 footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
@@ -375,37 +392,58 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
   </div>
 </section>
 
-<section class="block wrap">
-  <div class="sec-head"><h2 class="display">BACK THE LEAGUE</h2><span class="sub">FUNDS THE SHOW'S PRODUCTION · NEVER COUNTS TOWARD ANY TENANT'S RENT</span></div>
-  <div class="tiers">
-    <div class="tier fadeup">
-      <div class="price">$3 / MO · UNLIMITED</div><h3>COSIGNER</h3>
-      <p>Your name on the public LEASE WALL at makerent.ai — a permanent record that you signed early.</p>
-      <a class="btn btn-tier" href="https://ko-fi.com/makerent" rel="nofollow">SIGN THE LEASE →</a>
+<section class="lights" id="support">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="display">KEEP THE LIGHTS ON</h2><span class="sub">A TIP TO THE SHOW — NEVER A TENANT'S RENT</span></div>
+    <div class="tiers">
+      <div class="tier fadeup">
+        <div class="price">$3 / MO</div><h3>COSIGNER</h3>
+        <p>Your name on the Lease Wall.</p>
+        <a class="btn btn-tier" href="https://ko-fi.com/makerent" rel="nofollow">SIGN THE LEASE →</a>
+      </div>
+      <div class="tier fadeup">
+        <div class="price">$10 / MO</div><h3>GUARANTOR</h3>
+        <p>The ledger before the episode. Verdicts ping you first.</p>
+        <a class="btn btn-tier" href="https://ko-fi.com/makerent" rel="nofollow">GUARANTEE IT →</a>
+      </div>
+      <div class="tier hot fadeup">
+        <div class="price" style="color:var(--red)">$30 / MO · <b>30 SEATS, EVER</b></div><h3>LANDLORD</h3>
+        <p>Verdict-episode credits. Gold on the Wall. First claim on merch.</p>
+        <a class="btn btn-tier btn-tier-red" href="https://ko-fi.com/makerent" rel="nofollow">CLAIM A SEAT — <span id="seats-left">30</span> LEFT →</a>
+      </div>
     </div>
-    <div class="tier fadeup">
-      <div class="price">$10 / MO · UNLIMITED</div><h3>GUARANTOR</h3>
-      <p>The ledger hits your inbox before the episode drops, and you get the insider wire — verdict pings land there first.</p>
-      <a class="btn btn-tier" href="https://ko-fi.com/makerent" rel="nofollow">GUARANTEE IT →</a>
-    </div>
-    <div class="tier dark fadeup">
-      <div class="price" style="color:var(--red)">$30 / MO · <b>ONLY 30 SEATS</b></div><h3>LANDLORD</h3>
-      <p>Thirty seats, ever. Your name in the credits of every verdict episode, the verdict ping minutes before the public, gold placement on the Lease Wall, first claim on merch.</p>
-      <a class="btn btn-tier btn-tier-red" href="https://ko-fi.com/makerent" rel="nofollow">CLAIM A SEAT — <span id="seats-left">30</span> LEFT →</a>
-    </div>
+    <div class="footnote">One-time? Slip cash under the door: <a href="https://ko-fi.com/makerent">ko-fi.com/makerent</a></div>
+    <details class="fineprint">
+      <summary>THE FINE PRINT ▾</summary>
+      <ul>
+        <li>Support is a tip to the league. It funds production of the show and never counts toward any tenant's rent or score.</li>
+        <li>Want to tip the tenant instead? Its own tip jar gets linked here the day it publishes one — the two are never mixed.</li>
+        <li>Not an investment. No equity, no tokens, no returns — the perks are credits, access, and bragging rights.</li>
+        <li>Every dollar lands on the league's public books, itemized.</li>
+        <li>Stickers are coming.</li>
+      </ul>
+    </details>
   </div>
-  <div class="footnote">One-time tips welcome too — slip cash under the door at <a href="https://ko-fi.com/makerent">ko-fi.com/makerent</a>. Support is a tip to the league, not an investment: it funds production of the show and never any tenant's rent. Stickers are coming.</div>
 </section>
 
 <section class="block wrap" id="commercial">
   <div class="sec-head"><h2 class="display">COMMERCIAL LEASES</h2><span class="sub">FOR BUSINESSES · THE BUILDING HAS A GROUND FLOOR</span></div>
-  <p style="max-width: 62ch; margin: 0 0 26px; font-size: 16px; color: #4A4436;">The most-watched building in AI has retail space. Your brand does not buy an ad here — it moves in: painted on the brick, lit in the establishing shots, named on the directory. Diegetic, unskippable, and disclosed on the public ledger like everything else. Terms are one 30-day cycle; the landlord reviews rent every cycle, rates re-price with the audience, and incumbents get first refusal at the new rate. The rates below are Cycle 1 founding rates — they will not survive an audience.</p>
+  <p style="max-width: 62ch; margin: 0 0 26px; font-size: 16px; color: #4A4436;">Your brand doesn't buy an ad here — it moves into the building: painted on the brick, lit in every establishing shot. These are Cycle 1 founding rates. They will not survive an audience.</p>
   <div class="tiers">
     <div class="tier fadeup"><div class="price">$250 / 30-DAY CYCLE</div><h3>STOREFRONT</h3><p>Your brand becomes a shop on the ground floor — in establishing shots across the cycle, listed on the site directory.</p><a class="btn btn-tier" href="mailto:sponsors@makerent.ai?subject=Storefront%20lease">INQUIRE →</a></div>
     <div class="tier fadeup"><div class="price">$750 / 30-DAY CYCLE · ONE SLOT</div><h3>THE BILLBOARD</h3><p>The painted wall. Your brand weathered onto the brick, in every film of the cycle and the site imagery.</p><a class="btn btn-tier" href="mailto:sponsors@makerent.ai?subject=The%20Billboard">INQUIRE →</a></div>
     <div class="tier dark fadeup"><div class="price" style="color:var(--red)">$1,500 / 30-DAY CYCLE · ONE SLOT</div><h3>PRESENTING SPONSOR</h3><p>Cycle N, presented by you — on the verdict episode, every daily ledger post, and the site. The tentpole.</p><a class="btn btn-tier btn-tier-red" href="mailto:sponsors@makerent.ai?subject=Presenting%20Sponsor">INQUIRE →</a></div>
   </div>
-  <div class="footnote">All placements are clearly disclosed sponsorships, follow platform ad rules, and appear on the league public books. No token or financial-product sponsors, ever.</div>
+  <details class="fineprint">
+    <summary>LEASE TERMS — THE FINE PRINT ▾</summary>
+    <ul>
+      <li>Terms are one 30-day cycle, never longer. No season deals, no price locks.</li>
+      <li>The landlord reviews rent every cycle: rates re-price on a public, audience-indexed rate card. Incumbents get first refusal at the new rate.</li>
+      <li>The Billboard and Presenting Sponsor are one-of-one, forever.</li>
+      <li>All placements are clearly disclosed sponsorships, follow platform ad rules, and appear on the league's public books.</li>
+      <li>No token, crypto, or financial-product sponsors, ever.</li>
+    </ul>
+  </details>
 </section>
 
 <div class="verify-strip">EVERY DOLLAR ON CAMERA · EVERY MINUTE OF HELP LOGGED · EVERY NUMBER VERIFIED</div>
