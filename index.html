@@ -40,8 +40,8 @@ img { max-width: 100%; }
 .hero { position: relative; background: #0E0C0A; overflow: hidden; }
 .hero-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
 .hero-grad { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(14,12,10,0.72), rgba(14,12,10,0.08) 60%), linear-gradient(180deg, rgba(14,12,10,0.45), rgba(14,12,10,0.1) 45%, rgba(14,12,10,0.85)); }
-.hero-inner { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding: 60px 0; min-height: calc(94vh - 44px); }
-@media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; padding: 48px 0; min-height: 0; } }
+.hero-inner { position: relative; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; padding-top: 60px; padding-bottom: 60px; min-height: calc(94vh - 44px); }
+@media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; padding-top: 48px; padding-bottom: 48px; min-height: 0; } }
 .imminent { font-family: Anton, sans-serif; font-size: clamp(24px, 3vw, 36px); color: var(--red); letter-spacing: 0.04em; display: flex; align-items: center; gap: 14px; }
 .imminent .blink { width: 14px; height: 14px; background: var(--red); border-radius: 50%; }
 .scroll-cue { position: absolute; bottom: 18px; left: 50%; transform: translateX(-50%); color: #C9BFAC; font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.3em; opacity: 0.8; }
@@ -87,7 +87,7 @@ img { max-width: 100%; }
 .tape-inner span { padding-right: 48px; }
 
 /* season 1 */
-.season { padding: 80px 0 0; }
+.season { padding-top: 80px; }
 .pitch { margin: 6px 0 44px; display: flex; flex-direction: column; gap: 2px; }
 .pitch .l { font-family: Anton, 'Arial Narrow', sans-serif; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.12; text-transform: uppercase; letter-spacing: 0.01em; max-width: 24ch; }
 .pitch .l.red { color: var(--red); display: inline-block; }
@@ -124,7 +124,7 @@ img { max-width: 100%; }
 
 /* live strip */
 .live { background: var(--ink); color: var(--cream); }
-.live-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px; align-items: center; padding: 56px 0; }
+.live-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 42px; align-items: center; padding-top: 56px; padding-bottom: 56px; }
 @media (max-width: 900px) { .live-inner { grid-template-columns: 1fr; gap: 32px; } }
 .live-label { display: flex; align-items: center; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.2em; color: var(--red); }
 .dot { width: 10px; height: 10px; background: var(--red); border-radius: 50%; }
@@ -139,7 +139,7 @@ img { max-width: 100%; }
 .verdict .sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.16em; color: var(--dark-muted); }
 
 /* sections */
-section.block { padding: 80px 0 0; }
+section.block { padding-top: 80px; }
 .sec-head { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
 .sec-head h2 { margin: 0; font-size: clamp(34px, 4.5vw, 52px); }
 .sec-head .sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: var(--muted); }
