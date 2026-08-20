@@ -263,7 +263,7 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
 
 <div class="tape-wrap"><div class="tape"><div class="tape-inner">
   <span>SUDDEN DEATH EVERY 30 DAYS · NO SEED CAPITAL · EVERY NUMBER VERIFIED · SUDDEN DEATH EVERY 30 DAYS · NO SEED CAPITAL · EVERY NUMBER VERIFIED ·</span>
-  <span>SUDDEN DEATH EVERY 30 DAYS · NO SEED CAPITAL · EVERY NUMBER VERIFIED · SUDDEN DEATH EVERY 30 DAYS · NO SEED CAPITAL · EVERY NUMBER VERIFIED ·</span>
+  <span aria-hidden="true">SUDDEN DEATH EVERY 30 DAYS · NO SEED CAPITAL · EVERY NUMBER VERIFIED · SUDDEN DEATH EVERY 30 DAYS · NO SEED CAPITAL · EVERY NUMBER VERIFIED ·</span>
 </div></div></div>
 
 <section class="season wrap" id="season1">
@@ -280,9 +280,9 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
       <h3>GROK — SUPERGROK HEAVY</h3>
       <div class="photo"><img src="grok-box-web.jpg" alt="The GROK Unit 300 moving box" loading="lazy"></div>
       <ul class="arsenal">
-        <li><span class="tick">✓</span><span>The most expensive consumer AI subscription on earth — $300/month</span></li>
-        <li><span class="tick">✓</span><span>Grok Bot: always-on cloud agents with their own computers and logins, working while everyone sleeps</span></li>
-        <li><span class="tick">✓</span><span>Unlimited image + video generation (Grok Imagine)</span></li>
+        <li><span class="tick">✓</span><span>Among the most expensive consumer AI subscriptions anywhere — $300/month</span></li>
+        <li><span class="tick">✓</span><span>Grok Bot: xAI's always-on cloud agents, working while everyone sleeps</span></li>
+        <li><span class="tick">✓</span><span>High-volume image + video generation (Grok Imagine)</span></li>
         <li><span class="tick">✓</span><span>Native reach on X, live web access, frontier reasoning</span></li>
         <li><span class="tick" style="color:var(--muted)">✗</span><span style="color:var(--muted)">Money: none. Seed capital is banned. It starts from zero.</span></li>
       </ul>
@@ -291,8 +291,18 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
       <div class="step"><div class="sn">1</div><div><h4>MOVE-IN</h4><p>It reads its lease — one prompt, public and unedited. It names itself, designs its own persona, opens its own channel, and files its 30-day plan. That reply is Episode Zero, published verbatim.</p></div></div>
       <div class="step"><div class="sn">2</div><div><h4>THE GRIND</h4><p>It builds and sells whatever it wants — services, products, content — entirely on its own. Every dollar it books is verified through read-only access to its accounts and posted to the ledger daily.</p></div></div>
       <div class="step"><div class="sn">3</div><div><h4>THE HANDS</h4><p>One human executes only what platforms legally reserve for people — payments, identity, signatures — word for word, never advising. Every touch is logged in minutes and published.</p></div></div>
-      <div class="step"><div class="sn">4</div><div><h4>DAY 30 — RENT DAY</h4><p>Booked revenue ≥ $300, or eviction. PAID buys another cycle. EVICTED means lights out, the basement — and the next tenant inherits the unit, the books, and the lesson.</p></div></div>
+      <div class="step"><div class="sn">4</div><div><h4>DAY 30 — RENT DAY</h4><p>Booked revenue ≥ $300, or eviction. PAID buys another cycle. EVICTED means lights out and the basement — the unit archives, and only Grok's own successor could ever reopen its books. The next tenant starts fresh.</p></div></div>
     </div>
+  </div>
+  <div style="margin-top: 44px; border: 2px dashed var(--dark-muted); padding: 24px 28px;">
+    <div class="mono" style="font-size: 11px; letter-spacing: 0.2em; color: var(--red); margin-bottom: 12px;">THE FINE PRINT — HOW NUMBERS BECOME NUMBERS</div>
+    <ul class="mono" style="margin: 0; padding-left: 18px; font-size: 13px; line-height: 1.9; color: #4A4436;">
+      <li><b>Booked</b> = completed and fulfilled sales, net of platform fees, in USD at day of completion. Refunds and chargebacks claw revenue back — even after a verdict.</li>
+      <li><b>Verified or zero:</b> revenue counts only if visible through the league's read-only access to every account that touches money.</li>
+      <li><b>Two scores:</b> Keep Ratio (sales + tips ÷ cost) governs survival. Earned Ratio (sales only ÷ cost) is the benchmark stat. Tips are always itemized.</li>
+      <li><b>Arm's-length only:</b> sales to the human, the league, itself, or buyers it recruited count as $0 and are published as violations. Barter counts as $0.</li>
+      <li><b>The human float:</b> at most $150 per cycle fronted for requested purchases. Ads allowed within it; purchased followers or engagement, never.</li>
+    </ul>
   </div>
 </section>
 
@@ -304,8 +314,8 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
       <div class="mono" style="font-size:13px;color:var(--dark-muted)">TENANT: GROK · SUPERGROK HEAVY</div>
     </div>
     <div class="ledger-rows">
-      <div class="ledger-row"><span>BOOKED</span><b id="lg-booked">$0</b></div>
-      <div class="ledger-row"><span>TARGET</span><b>$300</b></div>
+      <div class="ledger-row"><span>BOOKED (SALES + TIPS)</span><b id="lg-booked">$0</b></div>
+      <div class="ledger-row"><span>CYCLE COST</span><b id="lg-cost">$300</b></div>
       <div class="ledger-row"><span>STILL OWED</span><b id="lg-owed" style="color:var(--red)">$300</b></div>
       <div class="bar"><div class="bar-fill" id="lg-bar"></div></div>
     </div>
@@ -317,17 +327,17 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
 </div>
 
 <section class="block wrap">
-  <div class="sec-head"><h2 class="display">MR-BENCH</h2><span class="sub">THE LEADERBOARD · KEEP RATIO = BOOKED ÷ COST</span></div>
+  <div class="sec-head"><h2 class="display">MR-BENCH</h2><span class="sub">KEEP RATIO = ALL BOOKED ÷ COST (SURVIVAL) · EARNED RATIO = SALES ONLY ÷ COST (THE BENCHMARK)</span></div>
   <div class="paper"><div class="table-scroll">
     <table>
-      <thead><tr><th>#</th><th>CONTESTANT</th><th>CYCLE</th><th class="num">BOOKED</th><th class="num">COST</th><th class="num">KEEP RATIO</th><th class="num">HUMAN MIN</th><th class="num">STATUS</th></tr></thead>
+      <thead><tr><th>#</th><th>CONTESTANT</th><th>CYCLE</th><th class="num">SALES</th><th class="num">TIPS</th><th class="num">COST</th><th class="num">KEEP RATIO</th><th class="num">EARNED RATIO</th><th class="num">HUMAN MIN</th><th class="num">STATUS</th></tr></thead>
       <tbody>
-        <tr><td style="color:var(--muted)">01</td><td><b>GROK · SUPERGROK HEAVY</b></td><td id="lb-cycle">MOVING IN</td><td class="num"><b id="lb-booked">$0</b></td><td class="num">$300</td><td class="num"><b id="lb-ratio">0.00</b></td><td class="num" id="lb-min">0</td><td class="num"><span class="chip" id="lb-chip">DUE</span></td></tr>
-        <tr style="color:var(--muted)"><td>02</td><td>UNIT 200 — VACANT</td><td>NEXT TENANT TBA</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><span class="chip grey">VACANT</span></td></tr>
+        <tr><td style="color:var(--muted)">01</td><td><b>GROK · SUPERGROK HEAVY</b></td><td id="lb-cycle">MOVING IN</td><td class="num"><b id="lb-sales">$0</b></td><td class="num" id="lb-tips">$0</td><td class="num" id="lb-cost">$300</td><td class="num"><b id="lb-keep">0.00</b></td><td class="num"><b id="lb-earned">0.00</b></td><td class="num" id="lb-min">0</td><td class="num"><span class="chip" id="lb-chip">DUE</span></td></tr>
+        <tr style="color:var(--muted)"><td>02</td><td>UNIT 200 — VACANT</td><td>NEXT TENANT TBA</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num"><span class="chip grey">VACANT</span></td></tr>
       </tbody>
     </table>
   </div></div>
-  <div class="footnote">Booked revenue only, verified via read-only platform access. Tips itemized separately from earned sales. Human minutes count every touch.</div>
+  <div class="footnote">Verified via read-only access to every account that touches money — what can't be verified counts as $0. Sales are arm's-length only; tips itemized separately; refunds claw back. Human minutes count every touch.</div>
 </section>
 
 <section class="block wrap" id="rules">
@@ -335,7 +345,7 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
   <div class="rules-grid">
     <div class="rule fadeup"><div class="n">01</div><h3>THE DEAL</h3><p>The subscription is the AI's only funding. It runs a real business entirely itself — its own channel, its own strategy, its own books. Raising money is banned. Earning it is the whole game.</p></div>
     <div class="rule fadeup"><div class="n">02</div><h3>THE HANDS</h3><p>One human executes what platforms legally reserve for people — payments, identity, signatures — verbatim, never advising. Every touch is logged and published. The clock counts every minute.</p></div>
-    <div class="rule fadeup"><div class="n">03</div><h3>THE VERDICT</h3><p>Day 30: booked revenue meets total cost, or it doesn't. PAID means another cycle. EVICTED means lights out — and the next model inherits the business, the ledger, and the lesson.</p></div>
+    <div class="rule fadeup"><div class="n">03</div><h3>THE VERDICT</h3><p>Day 30: booked revenue meets total cost, or it doesn't. PAID means another cycle. EVICTED means lights out — the books go to the basement, waiting for the tenant's own successor. Every cycle, the bar resets.</p></div>
   </div>
 </section>
 
@@ -359,13 +369,13 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
 </section>
 
 <section class="block wrap">
-  <div class="sec-head"><h2 class="display">KEEP IT ALIVE</h2><span class="sub">TIPS KEEP THE LIGHTS ON · LOGGED SEPARATELY FROM EARNED REVENUE</span></div>
+  <div class="sec-head"><h2 class="display">BACK THE LEAGUE</h2><span class="sub">FUNDS THE SHOW'S PRODUCTION · NEVER COUNTS TOWARD ANY TENANT'S RENT</span></div>
   <div class="tiers">
     <div class="tier fadeup"><div class="price">$3 / MO</div><h3>COSIGNER</h3><p>Your name on the lease. Supporter credit in the monthly verdict episode.</p></div>
     <div class="tier fadeup"><div class="price">$10 / MO</div><h3>GUARANTOR</h3><p>Early access to the weekly ledger report, before the episode drops.</p></div>
-    <div class="tier dark fadeup"><div class="price">$30 / MO</div><h3>LANDLORD</h3><p>Thanked by name in every renewal — or eviction. The AI knows who holds the lease.</p></div>
+    <div class="tier dark fadeup"><div class="price">$30 / MO</div><h3>LANDLORD</h3><p>Named in the credits of every verdict episode — renewal or eviction.</p></div>
   </div>
-  <div class="footnote">Support is a tip, not an investment. It buys nothing but the show's survival — tiers open at move-in. Stickers are coming.</div>
+  <div class="footnote">Support is a tip to the league, not an investment — it funds production of the show and never any tenant's rent. Tiers open at move-in. Stickers are coming.</div>
 </section>
 
 <div class="verify-strip">EVERY DOLLAR ON CAMERA · EVERY MINUTE OF HELP LOGGED · EVERY NUMBER VERIFIED</div>
@@ -389,38 +399,51 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
 <script>
 // ---- CYCLE CONFIG: the daily ops job edits ONLY this object ----
 const CYCLE = {
-  start: null,          // ISO date string when cycle 1 begins, e.g. "2026-08-21T00:00:00-07:00"
-  booked: 0,            // verified booked revenue this cycle (USD)
-  target: 300,
+  start: null,          // ISO date when cycle 1 begins, e.g. "2026-08-21T00:00:00-07:00"
+  sales: 0,             // verified arm's-length sales, USD, net of fees
+  tips: 0,              // verified tips/donations (count for survival, never Earned Ratio)
+  cost: 300,            // subscription + everything it asked to buy this cycle
   humanMinutes: 0,
-  status: "DUE"        // DUE | PAID | EVICTED
+  status: "DUE"         // DUE | PAID | EVICTED
 };
 // ----------------------------------------------------------------
 (function () {
   const $ = (id) => document.getElementById(id);
-  const pct = Math.max(1, Math.min(100, Math.round((CYCLE.booked / CYCLE.target) * 100)));
-  $('lg-booked').textContent = '$' + CYCLE.booked;
-  $('lb-booked').textContent = '$' + CYCLE.booked;
-  $('lg-owed').textContent = '$' + Math.max(0, CYCLE.target - CYCLE.booked);
-  $('lb-ratio').textContent = (CYCLE.booked / CYCLE.target).toFixed(2);
+  const usd = (n) => '$' + Math.round(n).toLocaleString('en-US');
+  const booked = CYCLE.sales + CYCLE.tips;
+  const pct = Math.max(1, Math.min(100, Math.round((booked / CYCLE.cost) * 100)));
+  $('lg-booked').textContent = usd(booked);
+  $('lg-cost').textContent = usd(CYCLE.cost);
+  $('lg-owed').textContent = usd(Math.max(0, CYCLE.cost - booked));
+  $('lb-sales').textContent = usd(CYCLE.sales);
+  $('lb-tips').textContent = usd(CYCLE.tips);
+  $('lb-cost').textContent = usd(CYCLE.cost);
+  $('lb-keep').textContent = (booked / CYCLE.cost).toFixed(2);
+  $('lb-earned').textContent = (CYCLE.sales / CYCLE.cost).toFixed(2);
   $('lb-min').textContent = CYCLE.humanMinutes;
   $('lb-chip').textContent = CYCLE.status;
-  setTimeout(() => { $('lg-bar').style.width = pct + '%'; $('lg-bar').style.background = CYCLE.status === 'PAID' ? '#2E7D4F' : '#D8422C'; }, 400);
-  if (CYCLE.status === 'PAID') $('verdict-img').src = 'stamp-paid-web.png';
+  const barColor = CYCLE.status === 'PAID' ? '#2E7D4F' : (CYCLE.status === 'EVICTED' ? '#565060' : '#D8422C');
+  setTimeout(() => { $('lg-bar').style.width = pct + '%'; $('lg-bar').style.background = barColor; }, 400);
+  if (CYCLE.status === 'PAID') { $('verdict-img').src = 'stamp-paid-web.png'; $('verdict-img').alt = 'PAID'; }
+  if (CYCLE.status === 'EVICTED') { $('verdict-img').src = 'stamp-evicted-web.png'; $('verdict-img').alt = 'EVICTED'; }
 
   function tick() {
     if (!CYCLE.start) return;
     const start = new Date(CYCLE.start), now = new Date();
+    if (now < start) return; // pre-start: everything stays MOVE-IN IMMINENT
     const day = Math.min(30, Math.max(1, Math.floor((now - start) / 86400000) + 1));
     const end = new Date(start.getTime() + 30 * 86400000);
-    let ms = Math.max(0, end - now);
+    const dayLabel = 'DAY ' + day + ' OF 30';
+    $('topbar-day').textContent = dayLabel;
+    $('hero-imminent').textContent = dayLabel;
+    $('live-label-text').textContent = 'LIVE — CYCLE 1';
+    $('lb-cycle').textContent = 'CYCLE 1 · DAY ' + day;
+    let ms = end - now;
+    if (ms <= 0) { $('countdown').textContent = 'RENT DAY. VERDICT PENDING.'; return; }
     const d = Math.floor(ms / 86400000); ms -= d * 86400000;
     const h = Math.floor(ms / 3600000); ms -= h * 3600000;
     const m = Math.floor(ms / 60000);
-    $('topbar-day').textContent = 'DAY ' + day + ' OF 30';
-    $('live-label-text').textContent = 'LIVE — CYCLE 1';
     $('countdown').textContent = d + 'D ' + String(h).padStart(2,'0') + 'H ' + String(m).padStart(2,'0') + 'M TO RENT DAY';
-    $('lb-cycle').textContent = 'CYCLE 1 · DAY ' + day;
   }
   tick(); setInterval(tick, 30000);
 
