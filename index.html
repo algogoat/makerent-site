@@ -29,7 +29,7 @@ a { color: var(--red); text-decoration: none; } a:hover { color: #A32E1D; }
 img { max-width: 100%; }
 
 /* topbar */
-.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--ink); color: var(--cream); padding: 10px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; }
+.topbar { position: sticky; top: 0; z-index: 60; display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--ink); color: var(--cream); padding: 10px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; box-shadow: 0 2px 14px rgba(14,12,10,0.35); }
 .topbar .brand { display: flex; align-items: center; gap: 10px; }
 .topbar img { width: 24px; height: 24px; }
 .topbar .mid { color: var(--dark-muted); }
@@ -191,6 +191,12 @@ tr:last-child td { border-bottom: none; }
 .tier.dark .price { color: var(--red); }
 .tier h3 { font-family: Anton, sans-serif; font-size: 26px; margin: 0; }
 .tier p { margin: 0; font-size: 14px; color: #4A4436; } .tier.dark p { color: #C9BFAC; }
+.btn-tier { margin-top: 12px; font-size: 12px; padding: 12px 16px; background: var(--ink); color: var(--cream); text-align: center; }
+.btn-tier:hover { background: var(--red); color: var(--cream); }
+.btn-tier-red { background: var(--red); } .btn-tier-red:hover { background: #A32E1D; }
+.tier { transition: transform 0.35s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.35s cubic-bezier(0.2,0.7,0.2,1); }
+.tier:hover { transform: translate(-3px, -5px); box-shadow: 12px 14px 0 var(--ink); }
+.tier.dark:hover { box-shadow: 12px 14px 0 var(--red); }
 
 .verify-strip { margin-top: 80px; background: var(--red); color: var(--cream); padding: 16px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; text-align: center; }
 
@@ -371,11 +377,23 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
 <section class="block wrap">
   <div class="sec-head"><h2 class="display">BACK THE LEAGUE</h2><span class="sub">FUNDS THE SHOW'S PRODUCTION · NEVER COUNTS TOWARD ANY TENANT'S RENT</span></div>
   <div class="tiers">
-    <div class="tier fadeup"><div class="price">$3 / MO</div><h3>COSIGNER</h3><p>Your name on the lease. Supporter credit in the monthly verdict episode.</p></div>
-    <div class="tier fadeup"><div class="price">$10 / MO</div><h3>GUARANTOR</h3><p>Early access to the weekly ledger report, before the episode drops.</p></div>
-    <div class="tier dark fadeup"><div class="price">$30 / MO</div><h3>LANDLORD</h3><p>Named in the credits of every verdict episode — renewal or eviction.</p></div>
+    <div class="tier fadeup">
+      <div class="price">$3 / MO · UNLIMITED</div><h3>COSIGNER</h3>
+      <p>Your name on the lease. Supporter credit in the monthly verdict episode.</p>
+      <a class="btn btn-tier" href="https://ko-fi.com/makerent" rel="nofollow">SIGN THE LEASE →</a>
+    </div>
+    <div class="tier fadeup">
+      <div class="price">$10 / MO · UNLIMITED</div><h3>GUARANTOR</h3>
+      <p>The weekly ledger report lands in your inbox before the episode drops. You know first.</p>
+      <a class="btn btn-tier" href="https://ko-fi.com/makerent" rel="nofollow">GUARANTEE IT →</a>
+    </div>
+    <div class="tier dark fadeup">
+      <div class="price" style="color:var(--red)">$30 / MO · <b>ONLY 30 SEATS</b></div><h3>LANDLORD</h3>
+      <p>Thirty days. Thirty landlords. Named in the credits of every verdict — renewal or eviction — and first claim on cycle-one merch.</p>
+      <a class="btn btn-tier btn-tier-red" href="https://ko-fi.com/makerent" rel="nofollow">CLAIM A SEAT — <span id="seats-left">30</span> LEFT →</a>
+    </div>
   </div>
-  <div class="footnote">Support is a tip to the league, not an investment — it funds production of the show and never any tenant's rent. Tiers open at move-in. Stickers are coming.</div>
+  <div class="footnote">One-time tips welcome too — slip cash under the door at <a href="https://ko-fi.com/makerent">ko-fi.com/makerent</a>. Support is a tip to the league, not an investment: it funds production of the show and never any tenant's rent. Stickers are coming.</div>
 </section>
 
 <div class="verify-strip">EVERY DOLLAR ON CAMERA · EVERY MINUTE OF HELP LOGGED · EVERY NUMBER VERIFIED</div>
@@ -455,6 +473,28 @@ const CYCLE = {
   // reduced motion: freeze the hero film
   if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
     const v = document.getElementById('hero-video'); if (v) v.pause();
+  }
+  // count-up ledger numbers when the live strip scrolls into view
+  const live = document.querySelector('.live');
+  if (live && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    const cu = new IntersectionObserver((es) => {
+      if (!es[0].isIntersecting) return; cu.disconnect();
+      [['lg-booked', booked], ['lg-cost', CYCLE.cost], ['lg-owed', Math.max(0, CYCLE.cost - booked)]].forEach(([id, target]) => {
+        const el = $(id); const t0 = performance.now();
+        const step = (t) => { const k = Math.min(1, (t - t0) / 900); el.textContent = usd(target * (k * (2 - k))); if (k < 1) requestAnimationFrame(step); };
+        requestAnimationFrame(step);
+      });
+    }, { threshold: 0.4 });
+    cu.observe(live);
+  }
+  // parallax drift on THE SHOW band
+  const showBg = document.querySelector('.show-bg');
+  if (showBg && window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
+    showBg.style.transform = 'scale(1.12)';
+    let ticking = false;
+    const par = () => { const r = showBg.parentElement.getBoundingClientRect();
+      showBg.style.transform = 'translateY(' + Math.max(-44, Math.min(44, r.top * -0.07)) + 'px) scale(1.12)'; ticking = false; };
+    window.addEventListener('scroll', () => { if (!ticking) { requestAnimationFrame(par); ticking = true; } }, { passive: true });
   }
   // LED: subtle random flicker
   const led = $('led');
