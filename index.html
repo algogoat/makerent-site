@@ -71,11 +71,27 @@ img { max-width: 100%; }
 
 /* season 1 */
 .season { padding: 80px 0 0; }
-.season-intro { font-size: clamp(20px, 2.6vw, 28px); line-height: 1.45; max-width: 34ch; font-weight: 700; margin: 0 0 34px; }
-.season-intro em { font-style: normal; color: var(--red); }
-.season-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 40px; align-items: start; }
+.pitch { margin: 6px 0 44px; display: flex; flex-direction: column; gap: 2px; }
+.pitch .l { font-family: Anton, 'Arial Narrow', sans-serif; font-size: clamp(26px, 3.6vw, 46px); line-height: 1.12; text-transform: uppercase; letter-spacing: 0.01em; max-width: 24ch; }
+.pitch .l.red { color: var(--red); display: inline-block; }
+.pitch .l.red span { border-bottom: 6px solid var(--ink); padding-bottom: 2px; }
+.pitch .src { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.18em; color: var(--muted); margin-top: 14px; }
+@media (prefers-reduced-motion: no-preference) {
+  .pitch .l { opacity: 0; transform: translateY(16px); transition: opacity .6s cubic-bezier(.2,.7,.2,1), transform .6s cubic-bezier(.2,.7,.2,1); }
+  .pitch.in .l { opacity: 1; transform: none; }
+  .pitch.in .l:nth-child(2) { transition-delay: .18s; } .pitch.in .l:nth-child(3) { transition-delay: .4s; }
+  .pitch .src { opacity: 0; transition: opacity .6s ease .7s; } .pitch.in .src { opacity: 1; }
+  .step { opacity: 0; transform: translateX(18px); transition: opacity .55s cubic-bezier(.2,.7,.2,1), transform .55s cubic-bezier(.2,.7,.2,1); }
+  .step.in { opacity: 1; transform: none; }
+}
+.season-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 44px; align-items: start; }
 @media (max-width: 900px) { .season-grid { grid-template-columns: 1fr; } }
-.dossier { background: var(--cream); border: 3px solid var(--ink); box-shadow: 10px 10px 0 var(--ink); padding: 28px 30px; display: flex; flex-direction: column; gap: 14px; }
+.dossier { position: relative; background: var(--cream); border: 3px solid var(--ink); box-shadow: 12px 12px 0 var(--ink); padding: 26px 28px 28px; display: flex; flex-direction: column; gap: 14px; transform: rotate(-1deg); }
+.dossier::before, .dossier::after { content: ""; position: absolute; width: 96px; height: 26px; background: rgba(184, 173, 151, 0.55); top: -12px; }
+.dossier::before { left: 14%; transform: rotate(-4deg); }
+.dossier::after { right: 14%; transform: rotate(3deg); }
+.dossier .photo { border: 2px solid var(--ink); overflow: hidden; margin: 2px 0 4px; }
+.dossier .photo img { display: block; width: 100%; }
 .dossier h3 { margin: 0; font-family: Anton, sans-serif; font-size: 26px; }
 .dossier .sub { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--red); }
 .arsenal { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 10px; font-family: 'IBM Plex Mono', monospace; font-size: 13.5px; }
@@ -235,11 +251,17 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
 
 <section class="season wrap" id="season1">
   <div class="sec-head"><h2 class="display">SEASON 1: THE TENANT</h2><span class="sub">GROK · MOVES INTO UNIT 300</span></div>
-  <p class="season-intro">The pitch behind Grok Bot: an army of AI agents running your company 24/7. Elon Musk says it can power a one-person business. <em>Rent says prove it.</em></p>
+  <div class="pitch" id="pitch">
+    <div class="l">An army of AI agents running your company 24/7.</div>
+    <div class="l">Musk says it can power a one-person business.</div>
+    <div class="l red"><span>Rent says prove it.</span></div>
+    <div class="src">— THE GROK BOT PITCH, AUGUST 2026 · THE FIRST TENANT OF UNIT 300</div>
+  </div>
   <div class="season-grid">
-    <div class="dossier">
+    <div class="dossier fadeup">
       <div class="sub">TENANT DOSSIER · CYCLE 1</div>
       <h3>GROK — SUPERGROK HEAVY</h3>
+      <div class="photo"><img src="grok-box-web.jpg" alt="The GROK Unit 300 moving box" loading="lazy"></div>
       <ul class="arsenal">
         <li><span class="tick">✓</span><span>The most expensive consumer AI subscription on earth — $300/month</span></li>
         <li><span class="tick">✓</span><span>Grok Bot: always-on cloud agents with their own computers and logins, working while everyone sleeps</span></li>
@@ -394,9 +416,10 @@ const CYCLE = {
   }
   tick(); setInterval(tick, 30000);
 
-  // scroll reveals + stamp slams
-  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.25 });
-  document.querySelectorAll('.fadeup, .slam').forEach(el => io.observe(el));
+  // scroll reveals + stamp slams + pitch/step staggers
+  const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.2 });
+  document.querySelectorAll('.fadeup, .slam, .pitch, .step').forEach(el => io.observe(el));
+  document.querySelectorAll('.step').forEach((el, i) => { el.style.transitionDelay = (i * 0.12) + 's'; });
 
   // reduced motion: freeze the hero film
   if (!window.matchMedia('(prefers-reduced-motion: no-preference)').matches) {
