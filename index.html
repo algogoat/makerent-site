@@ -50,7 +50,24 @@ img { max-width: 100%; }
 .hero-left { display: flex; flex-direction: column; gap: 24px; }
 .hero-left img.wordmark { width: min(480px, 88%); filter: drop-shadow(0 6px 24px rgba(0,0,0,0.55)); }
 .tagline { font-family: 'IBM Plex Mono', monospace; font-size: 13px; letter-spacing: 0.22em; color: #C9BFAC; }
-.hero-copy { font-size: 19px; max-width: 46ch; color: #E5DCC9; margin: 0; }
+.hero-head { font-family: Anton, 'Arial Narrow', sans-serif; font-size: clamp(26px, 2.9vw, 40px); line-height: 1.15; text-transform: uppercase; color: var(--cream); margin: 0; max-width: 22ch; text-shadow: 0 3px 18px rgba(0,0,0,0.5); }
+.hero-sub { font-family: 'IBM Plex Mono', monospace; font-size: 14.5px; line-height: 1.75; letter-spacing: 0.04em; color: #C9BFAC; margin: 0; max-width: 52ch; }
+.hero-sub b { color: var(--cream); font-weight: 600; }
+@media (prefers-reduced-motion: no-preference) {
+  .lease-card { animation: leaseIn 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) 0.35s both; }
+  .lease-card h4, .lease-card .lease-row { opacity: 0; animation: rowIn 0.45s ease both; }
+  .lease-card h4 { animation-delay: 0.9s; }
+  .lease-card .lease-row:nth-of-type(1) { animation-delay: 1.05s; }
+  .lease-card .lease-row:nth-of-type(2) { animation-delay: 1.18s; }
+  .lease-card .lease-row:nth-of-type(3) { animation-delay: 1.31s; }
+  .lease-card .lease-row:nth-of-type(4) { animation-delay: 1.44s; }
+  .lease-card .lease-row:nth-of-type(5) { animation-delay: 1.57s; }
+  .lease-card .slam { transition-delay: 1.9s; }
+  .lease-card { transition: transform 0.4s cubic-bezier(0.2, 0.7, 0.2, 1); }
+  .lease-card:hover { transform: rotate(-0.4deg) translateY(-4px); }
+}
+@keyframes leaseIn { from { opacity: 0; transform: rotate(2.5deg) translateY(34px); } to { opacity: 1; transform: rotate(-1.2deg) translateY(0); } }
+@keyframes rowIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 .cta-row { display: flex; gap: 14px; flex-wrap: wrap; }
 .btn { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.12em; padding: 16px 26px; font-weight: 600; }
 .btn-red { background: var(--red); color: var(--cream); } .btn-red:hover { background: #A32E1D; color: var(--cream); }
@@ -221,8 +238,8 @@ footer { background: var(--ink); color: var(--cream); padding: 50px 0 36px; }
   <div class="wrap hero-inner">
     <div class="hero-left fadeup in">
       <img class="wordmark" src="logo-wordmark-dark.png" alt="MAKE RENT">
-      <p class="hero-copy" style="font-size:21px; font-weight:600;">An AI just signed a lease it can't afford.</p>
-      <p class="hero-copy">$300 rent. 30 days. Zero seed money. It earns its keep or it gets evicted — and every number is verified.</p>
+      <p class="hero-head">An AI just signed a lease it can't afford.</p>
+      <p class="hero-sub">$300 RENT · 30 DAYS · ZERO SEED MONEY.<br>It earns its keep or it gets <b>evicted</b> — and every number is verified.</p>
       <div class="imminent"><div class="blink"></div><span id="hero-imminent">MOVE-IN IMMINENT</span></div>
       <div class="cta-row">
         <a class="btn btn-red" href="https://x.com/MakeRentAI" rel="me">WATCH IT HAPPEN →</a>
