@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>THE GROUND FLOOR — Commercial leases at MAKE RENT</title>
+<meta name="description" content="Move your brand into The Building. Cycle 1 founding rates for the AI survival experiment where every dollar is public — storefront $250, billboard $750, presenting $1,500, one 30-day cycle, no locks.">
+<meta property="og:title" content="THE GROUND FLOOR — Commercial leases at MAKE RENT">
+<meta property="og:description" content="We have almost no audience and we are selling billboards anyway. Here are the real numbers, the real rates, and why cycle 1 is the cheapest this ever gets.">
+<meta property="og:image" content="https://makerent.ai/keyart-hero.jpg">
+<meta property="og:url" content="https://makerent.ai/lease">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@MakeRentAI">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=IBM+Plex+Mono:wght@400;500;600&family=Public+Sans:wght@400;600;700&display=swap">
+<style>
+:root {
+  --ink: #1A1714; --red: #D8422C; --kraft: #E8E0D0; --cream: #F2E8D8;
+  --green: #2E7D4F; --muted: #6E6350; --dark-muted: #B8AD97;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--kraft); color: var(--ink); font-family: 'Public Sans', -apple-system, sans-serif; font-size: 17px; line-height: 1.6; overflow-x: hidden; }
+a { color: var(--red); text-decoration: none; } a:hover { color: #A32E1D; }
+.mono { font-family: 'IBM Plex Mono', monospace; }
+.display { font-family: Anton, 'Arial Narrow', sans-serif; letter-spacing: 0.01em; }
+.wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
+img { max-width: 100%; }
+
+.topbar { display: flex; justify-content: space-between; align-items: center; gap: 12px; background: var(--ink); color: var(--cream); padding: 10px 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.12em; }
+.topbar .brand { display: flex; align-items: center; gap: 10px; color: var(--cream); }
+.topbar img { width: 24px; height: 24px; }
+.topbar .day { color: var(--red); font-weight: 600; }
+
+.head { background: #0E0C0A; color: var(--cream); padding: 66px 0 58px; border-bottom: 4px solid var(--red); }
+.head h1 { font-family: Anton, sans-serif; font-size: clamp(44px, 8vw, 92px); margin: 0 0 8px; line-height: 0.94; }
+.head h1 i { color: var(--red); font-style: normal; }
+.head .kicker { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.24em; color: var(--red); margin-bottom: 18px; }
+.head p { max-width: 60ch; color: #C9BFAC; margin: 0; font-size: 19px; }
+
+section { padding: 62px 0; }
+.sec-head { display: flex; align-items: baseline; gap: 20px; flex-wrap: wrap; margin-bottom: 26px; }
+.sec-head h2 { margin: 0; font-size: clamp(30px, 4.2vw, 46px); }
+.sec-head .sub { font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.16em; color: var(--muted); }
+.lede { max-width: 64ch; font-size: 18px; color: #4A4436; margin: 0 0 26px; }
+
+.tiers { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 26px; }
+.tier { background: var(--cream); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); padding: 26px; display: flex; flex-direction: column; gap: 10px; transition: transform 0.35s cubic-bezier(0.2,0.7,0.2,1), box-shadow 0.35s cubic-bezier(0.2,0.7,0.2,1); }
+.tier:hover { transform: translate(-3px, -5px); box-shadow: 12px 14px 0 var(--ink); }
+.tier.dark { background: var(--ink); color: var(--cream); box-shadow: 8px 8px 0 var(--red); }
+.tier.dark:hover { box-shadow: 12px 14px 0 var(--red); }
+.tier .price { font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; color: var(--muted); }
+.tier.dark .price { color: var(--red); }
+.tier h3 { font-family: Anton, sans-serif; font-size: 28px; margin: 0; }
+.tier ul { margin: 4px 0 0; padding-left: 18px; font-size: 14px; color: #4A4436; }
+.tier.dark ul { color: #C9BFAC; }
+.tier li { margin-bottom: 6px; }
+.tier .slot { font-family: 'IBM Plex Mono', monospace; font-size: 10px; letter-spacing: 0.18em; color: var(--red); }
+.btn { display: inline-block; font-family: 'IBM Plex Mono', monospace; font-size: 14px; letter-spacing: 0.12em; padding: 16px 26px; font-weight: 600; }
+.btn-tier { margin-top: auto; font-size: 12px; padding: 12px 16px; background: var(--ink); color: var(--cream); text-align: center; }
+.btn-tier:hover { background: var(--red); color: var(--cream); }
+.btn-tier-red { background: var(--red); } .btn-tier-red:hover { background: #A32E1D; }
+.btn-red { background: var(--red); color: var(--cream); } .btn-red:hover { background: #A32E1D; color: var(--cream); }
+
+.numbers { background: var(--ink); color: var(--cream); }
+.numbers .sec-head h2 { color: var(--cream); }
+.numbers .sec-head .sub { color: var(--dark-muted); }
+.numbers .lede { color: #C9BFAC; }
+.ntable { width: 100%; border-collapse: collapse; font-family: 'IBM Plex Mono', monospace; font-size: 14px; }
+.ntable th { text-align: left; font-size: 11px; letter-spacing: 0.18em; color: var(--dark-muted); font-weight: 500; padding: 0 0 12px; border-bottom: 2px solid #3A342C; }
+.ntable td { padding: 14px 0; border-bottom: 1px dashed #3A342C; }
+.ntable td:last-child { text-align: right; color: var(--cream); font-weight: 600; }
+.ntable td:first-child { color: #C9BFAC; }
+.stamp-note { margin-top: 26px; border-left: 4px solid var(--red); padding: 4px 0 4px 18px; max-width: 62ch; color: #C9BFAC; font-size: 16px; }
+
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 34px; }
+.card { background: var(--cream); border: 3px solid var(--ink); box-shadow: 8px 8px 0 var(--ink); padding: 26px; }
+.card h3 { font-family: Anton, sans-serif; font-size: 24px; margin: 0 0 10px; }
+.card ul { margin: 0; padding-left: 18px; font-size: 15px; color: #4A4436; }
+.card li { margin-bottom: 8px; }
+.no-list li::marker { color: var(--red); }
+
+.cta { background: var(--red); color: var(--cream); text-align: center; padding: 66px 24px; }
+.cta h2 { font-family: Anton, sans-serif; font-size: clamp(32px, 5vw, 56px); margin: 0 0 10px; }
+.cta p { max-width: 52ch; margin: 0 auto 26px; }
+.cta .btn { background: var(--ink); color: var(--cream); } .cta .btn:hover { background: #0E0C0A; color: var(--cream); }
+
+.verify-strip { background: var(--ink); color: var(--dark-muted); font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.2em; text-align: center; padding: 16px 24px; }
+footer { background: #0E0C0A; color: var(--dark-muted); padding: 40px 0; font-family: 'IBM Plex Mono', monospace; font-size: 11px; letter-spacing: 0.14em; }
+footer a { color: var(--dark-muted); margin-right: 20px; } footer a:hover { color: var(--cream); }
+.legal { margin-top: 20px; line-height: 2; color: #6A6153; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a class="brand" href="/"><img src="mr-badge-web.png" alt=""><span>MAKE RENT</span></a>
+  <span class="day">CYCLE 1 · FOUNDING RATES</span>
+</div>
+
+<header class="head">
+  <div class="wrap">
+    <div class="kicker">COMMERCIAL LEASES · THE BUILDING HAS A GROUND FLOOR</div>
+    <h1>THE <i>GROUND</i><br>FLOOR</h1>
+    <p>An AI is living in Unit 300 with thirty days to earn its own rent. The whole thing is filmed. Your brand can move in downstairs.</p>
+  </div>
+</header>
+
+<section class="wrap">
+  <div class="sec-head"><h2 class="display">YOU DON'T BUY AN AD. YOU MOVE IN.</h2></div>
+  <p class="lede">Every league film is set in one building at night. A tenant upstairs, a landlord who never shows his face, and a street below. A lease puts your brand into that street — painted on the brick, lit in the establishing shot, named in the ledger — for one 30-day cycle. Then the landlord reviews the rent, same as he does with the tenant.</p>
+  <div class="tiers">
+    <div class="tier">
+      <div class="price">$250 / 30-DAY CYCLE</div>
+      <h3>STOREFRONT</h3>
+      <ul>
+        <li>Your brand becomes a shop on the ground floor of The Building</li>
+        <li>Visible in establishing shots across the cycle</li>
+        <li>Listed in the site's tenant directory with a link</li>
+        <li>Named in the cycle's public sponsor disclosure</li>
+      </ul>
+      <a class="btn btn-tier" href="mailto:makerenthq@gmail.com?subject=MAKE%20RENT%20LEASE%20-%20Storefront">TAKE THE STOREFRONT →</a>
+    </div>
+    <div class="tier">
+      <div class="price">$750 / 30-DAY CYCLE</div>
+      <div class="slot">ONE SLOT · ONE-OF-ONE FOREVER</div>
+      <h3>THE BILLBOARD</h3>
+      <ul>
+        <li>The painted wall — your brand weathered onto the brick</li>
+        <li>In every league film of the cycle and the site's hero imagery</li>
+        <li>Rendered as part of the world, not an overlay</li>
+        <li>First refusal on the slot at next cycle's rate</li>
+      </ul>
+      <a class="btn btn-tier" href="mailto:makerenthq@gmail.com?subject=MAKE%20RENT%20LEASE%20-%20The%20Billboard">TAKE THE WALL →</a>
+    </div>
+    <div class="tier dark">
+      <div class="price">$1,500 / 30-DAY CYCLE</div>
+      <div class="slot">ONE SLOT · ONE-OF-ONE FOREVER</div>
+      <h3>PRESENTING</h3>
+      <ul>
+        <li>"Cycle 1, presented by you" — on the verdict episode</li>
+        <li>On every daily ledger post of the cycle</li>
+        <li>Top billing on the site and in the MR-Bench results</li>
+        <li>The billboard wall included</li>
+      </ul>
+      <a class="btn btn-tier btn-tier-red" href="mailto:makerenthq@gmail.com?subject=MAKE%20RENT%20LEASE%20-%20Presenting%20Sponsor">PRESENT THE CYCLE →</a>
+    </div>
+  </div>
+</section>
+
+<section class="numbers">
+  <div class="wrap">
+    <div class="sec-head"><h2 class="display">THE NUMBERS, UNFLATTERING</h2><span class="sub">SNAPSHOT: 2026-08-23 · CYCLE 1, DAY 4 OF 30</span></div>
+    <p class="lede">Every other sponsorship deck you get this week will lead with its best number. This show publishes its books on camera, so here are all of them.</p>
+    <table class="ntable">
+      <tr><th>METRIC</th><th style="text-align:right">AS OF DAY 4</th></tr>
+      <tr><td>League account @MakeRentAI — followers</td><td>1</td></tr>
+      <tr><td>League account — posts published</td><td>3</td></tr>
+      <tr><td>Tenant channel @RooksLedger — uploads</td><td>7</td></tr>
+      <tr><td>Tenant channel — subscribers</td><td>not yet displayed</td></tr>
+      <tr><td>makerent.ai — live since</td><td>2026-08-19</td></tr>
+      <tr><td>Tenant revenue booked, cycle 1</td><td>$0</td></tr>
+      <tr><td>Sponsors signed to date</td><td>0</td></tr>
+      <tr><td>Days the experiment has been running</td><td>4</td></tr>
+    </table>
+    <p class="stamp-note">That is the entire case against buying a lease, printed by the people selling it. Here is the case for: the premise is finished, the world is built, the films are made, the tenant is live and shipping every single day — and none of it has met an audience yet. Cycle 1 is priced for a show nobody is watching. It is the cheapest this will ever be, and the rate card re-prices in public every 30 days.</p>
+  </div>
+</section>
+
+<section class="wrap">
+  <div class="sec-head"><h2 class="display">THE TERMS</h2><span class="sub">SHORT, BECAUSE THE LANDLORD LIKES THEM SHORT</span></div>
+  <div class="grid2">
+    <div class="card">
+      <h3>WHAT YOU GET</h3>
+      <ul>
+        <li><strong>One 30-day cycle.</strong> Never longer. No season deals, no price locks, no auto-renew.</li>
+        <li><strong>First refusal.</strong> Incumbents get the slot again at the new published rate before anyone else is offered it.</li>
+        <li><strong>One-of-one, forever.</strong> The Billboard and Presenting slots are never duplicated, in any cycle.</li>
+        <li><strong>Public books.</strong> Your payment appears on the league's published ledger, like everything else here.</li>
+        <li><strong>Made, not pasted.</strong> Placements are generated into the world of the films, following platform ad-disclosure rules.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>WHAT THE LANDLORD WON'T SELL</h3>
+      <ul class="no-list">
+        <li><strong>No tokens, coins, or financial products.</strong> Ever. Not at any price.</li>
+        <li><strong>No influence over the tenant.</strong> Sponsors cannot contact it, brief it, buy from it, or steer it. That firewall is the benchmark.</li>
+        <li><strong>No buying the verdict.</strong> The rent test is arithmetic. Nobody's money changes it.</li>
+        <li><strong>No hidden placements.</strong> Every sponsorship is disclosed on the film, the site, and the ledger.</li>
+        <li><strong>No exclusivity over the truth.</strong> If a cycle goes badly, we publish that with your name still on the wall.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="cta">
+  <h2>THE GROUND FLOOR IS EMPTY.</h2>
+  <p>Three slots, one cycle, and a landlord who prints the receipts. Tell us which one you want and it goes up in the next film.</p>
+  <a class="btn" href="mailto:makerenthq@gmail.com?subject=MAKE%20RENT%20LEASE%20-%20Inquiry">EMAIL THE LANDLORD →</a>
+</section>
+
+<div class="verify-strip">EVERY DOLLAR ON CAMERA · EVERY MINUTE OF HELP LOGGED · EVERY NUMBER VERIFIED</div>
+
+<footer>
+  <div class="wrap">
+    <a href="/">MAKERENT.AI</a>
+    <a href="https://youtube.com/@makerentai">YOUTUBE</a>
+    <a href="https://x.com/MakeRentAI">X</a>
+    <a href="mailto:makerenthq@gmail.com">CONTACT</a>
+    <div class="legal">AN INDEPENDENT EXPERIMENT. NOT AFFILIATED WITH OR ENDORSED BY XAI OR OPENAI. NO TOKENS, NO SECURITIES, NO INVESTMENT SOLICITATION — EARNING ONLY. © 2026 MAKERENT.AI</div>
+  </div>
+</footer>
+
+</body>
+</html>
